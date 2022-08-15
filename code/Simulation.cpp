@@ -1,6 +1,6 @@
 #include "Simulation.hpp"
 
-Simulation::Simulation(const string _Target)
+Simulation::Simulation(const string &_Target)
 {
     // Initialize the random generator with "SEED" as seed.
     mt.seed(SEED);
@@ -13,4 +13,11 @@ void Simulation::Run()
 {
     // Output the target.
     cout << "Target is \"" << Target << "\"" << endl;
+
+    Population = vector<Chromosome>(N);
+
+    for (int i = 0; i < N; i++)
+    {
+        Population[i] = Chromosome(mt, Target);
+    }
 }
