@@ -8,20 +8,22 @@ class Chromosome
 private:
     string Target;
 
-    //* Main Body *//
-    vector<char> Genome;
-
 public:
     /* Constructors & Destructor */
     Chromosome() {}
-    Chromosome(mt19937_64 &mt, const string &_Target);
+    Chromosome(mt19937_64 &mt, const string &_Target); // Initialization
+    Chromosome(const string &_Target, const vector<char> &_Genome); // Inheritation
     ~Chromosome() {}
 
+    //* Main Body *//
+    vector<char> Genome;
     /* Public Varibles */
-    double Fitness;
+    int Fitness;
 
     /* Public Methods */
-    void OutputGenome();
+    string OutputGenome();
+    void CalcFitness();
+    void Mutation(mt19937_64 &mt, const double &_MutationRate);
 };
 
 #endif
