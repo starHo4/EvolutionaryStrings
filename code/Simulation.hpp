@@ -6,12 +6,18 @@
 class Simulation
 {
 private:
+    /* Static Variables */
+    static const int SEED = 1024;
+
     /* Private Variables */
     mt19937_64 mt;
+    string Target;
 
 public:
     /* Constructor */
-    Simulation();
+    Simulation() {}
+    Simulation(const string _Target);
+    ~Simulation() {}
 
     /* Public Methods */
     void Run();

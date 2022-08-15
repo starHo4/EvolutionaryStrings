@@ -1,15 +1,16 @@
 #include "Simulation.hpp"
 
-Simulation::Simulation()
+Simulation::Simulation(const string _Target)
 {
-    mt.seed(1024);
+    // Initialize the random generator with "SEED" as seed.
+    mt.seed(SEED);
+
+    // The target of this program is "Target".
+    Target = _Target;
 }
 
 void Simulation::Run()
 {
-    uniform_int_distribution uid(0, 10);
-    for (int i = 0; i < 10; i++)
-    {
-        cout << uid(mt) << endl;
-    }
+    // Output the target.
+    cout << "Target is \"" << Target << "\"" << endl;
 }
