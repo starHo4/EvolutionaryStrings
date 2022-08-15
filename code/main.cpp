@@ -1,7 +1,7 @@
-#include <iostream>
-using namespace std;
+#include "Simulation.hpp"
 
 int main()
 {
-    cout << "Hiroyuki Hoshi" << endl;
+    Simulation simulation;
+    simulation.Run();
 }
